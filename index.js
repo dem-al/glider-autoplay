@@ -7,8 +7,8 @@ function gliderAutoplay(glider, options) {
             interval,
             startItem = 0,
             pausable = true,
-            onPauseCallback,
-            onRestartCallback,
+            onPause,
+            onRestart,
         } = options;
         const _ = this;
         _.currentItem = startItem - 1;
@@ -26,15 +26,15 @@ function gliderAutoplay(glider, options) {
 
         const stopAutoplay = () => {
             clearInterval(_.autoplayInterval);
-            if (onPauseCallback && typeof onPauseCallback === "function") {
-                onPauseCallback();
+            if (onPause && typeof onPause === "function") {
+                onPause();
             }
         };
         const restartInterval = () => {
             _.currentItem = _.slide;
             _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
-            if (onRestartCallback && typeof onRestartCallback === "function") {
-                onRestartCallback();
+            if (onRestart && typeof onRestart === "function") {
+                onRestart();
             }
         };
 
