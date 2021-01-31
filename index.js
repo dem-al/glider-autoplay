@@ -30,7 +30,7 @@ function gliderAutoplay(glider, options) {
                 onPause();
             }
         };
-        const restartInterval = () => {
+        const restartAutoplay = () => {
             _.currentItem = _.slide;
             _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
             if (onRestart && typeof onRestart === "function") {
@@ -40,7 +40,10 @@ function gliderAutoplay(glider, options) {
 
         if (pausable) {
             _.ele.onmouseover = stopAutoplay.bind(_);
-            _.ele.onmouseout = restartInterval.bind(_);
+            _.ele.ontouchstart = stopAutoplay.bind(_);
+            _.ele.onmouseout = restartAutoplay.bind(_);
+            _.ele.ontouchend = restartAutoplay.bind(_);
+            _.ele.ontouchcancel = restartAutoplay.bind(_);
         }
     }
 }
