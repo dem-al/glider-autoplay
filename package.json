@@ -1,0 +1,49 @@
+{
+    "name": "glider-autoplay",
+    "version": "1.0.0",
+    "description": "Autoplay utility for Glider.js",
+    "main": "index.js",
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "babel-loader": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "husky": "^4.3.8",
+        "prettier": "^2.2.1",
+        "pretty-quick": "^3.1.0",
+        "webpack": "^5.19.0",
+        "webpack-cli": "^4.4.0"
+    },
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexanderdemidenko/glider-autoplay.git"
+    },
+    "keywords": [
+        "autoplay",
+        "Glider.js"
+    ],
+    "author": "Alexander Demidenko",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alexanderdemidenko/glider-autoplay/issues"
+    },
+    "homepage": "https://github.com/alexanderdemidenko/glider-autoplay#readme",
+    "browserslist": "> 0.25%, not dead",
+    "babel": {
+        "presets": [
+            "@babel/env"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}
