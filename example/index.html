@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Glider autoplay</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+        <script src="../index.min.js"></script>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: #dddddd;
+            }
+            .page {
+                width: 100%;
+            }
+            .slides {
+                overflow: hidden;
+            }
+            .slide {
+                padding: 0.5rem;
+                margin: 0.5rem;
+                border-radius: 0.5rem;
+                -webkit-box-shadow: 4px 4px 4px 4px rgba(34, 60, 80, 0.38);
+                -moz-box-shadow: 4px 4px 4px 4px rgba(34, 60, 80, 0.38);
+                box-shadow: 4px 4px 4px 4px rgba(34, 60, 80, 0.38);
+            }
+            .slide__name {
+                text-align: center;
+                font-weight: 600;
+            }
+            .slide__image {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+            }
+            .status {
+                margin-top: 3rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div id="slides" class="slides">
+                <div class="slide">
+                    <p class="slide__name">1</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x200" />
+                    </div>
+                    <div class="slide__quote">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Dignissimos, consequuntur.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">2</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x201" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aspernatur, aliquid.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">3</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x202" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vitae, dolorem.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">4</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x203" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Repellat, fugiat.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">5</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x205" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos, sed!
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">6</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x206" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        At, nobis!
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">7</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x207" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Molestias, eaque!
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">8</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x208" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Id, assumenda!
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">9</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x209" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quia, eos.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">10</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x210" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quia, eos.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">11</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x211" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quia, eos.
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <p class="slide__name">12</p>
+                    <div class="slide__image">
+                        <img src="https://source.unsplash.com/200x212" />
+                    </div>
+                    <p class="slide__quote">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quia, eos.
+                    </p>
+                </div>
+            </div>
+            <div role="tablist" class="dots"></div>
+            <div id="status" class="status">RUN</div>
+        </div>
+        <script>
+            gliderAutoplay(
+                new Glider(document.getElementById("slides"), {
+                    draggable: true,
+                    dots: ".dots",
+                    responsive: [
+                        {
+                            breakpoint: 720,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 3,
+                            },
+                        },
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 4,
+                            },
+                        },
+                    ],
+                }),
+                {
+                    interval: 2000,
+                    onPauseCallback: function () {
+                        document.getElementById("status").innerHTML = "PAUSE";
+                    },
+                    onRestartCallback: function () {
+                        document.getElementById("status").innerHTML = "RUN";
+                    },
+                }
+            );
+        </script>
+    </body>
+</html>
