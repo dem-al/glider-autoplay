@@ -48,8 +48,4 @@ function gliderAutoplay(glider, options) {
     }
 }
 
-if (typeof window !== "undefined") {
-    window.gliderAutoplay = gliderAutoplay;
-} else {
-    module.exports.gliderAutoplay = gliderAutoplay;
-}
+module.exports.gliderAutoplay = gliderAutoplay;

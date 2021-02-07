@@ -1,0 +1,6 @@
+node_modules
+*.gitignore
+*.prettierignore
+webpack.config.js
+*.html
+package-lock.json
