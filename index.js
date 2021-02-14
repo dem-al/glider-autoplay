@@ -23,16 +23,22 @@ function gliderAutoplay(glider, options) {
         };
 
         _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
+        _.isRunning = true;
 
         const stopAutoplay = () => {
             clearInterval(_.autoplayInterval);
+            _.isRunning = false;
             if (onPause && typeof onPause === "function") {
                 onPause();
             }
         };
         const restartAutoplay = () => {
+            if (_.isRunning) {
+                return;
+            }
             _.currentItem = _.slide;
             _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
+            _.isRunning = true;
             if (onRestart && typeof onRestart === "function") {
                 onRestart();
             }
@@ -45,6 +51,9 @@ function gliderAutoplay(glider, options) {
             _.ele.ontouchend = restartAutoplay.bind(_);
             _.ele.ontouchcancel = restartAutoplay.bind(_);
         }
+
+        _.pause = stopAutoplay;
+        _.run = restartAutoplay;
     }
 }
 
