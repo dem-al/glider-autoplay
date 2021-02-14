@@ -30,5 +30,34 @@ gliderAutoplay(
 ***interval*** - interval between slides in milliseconds; <br/>
 ***pausable*** - autoplay will be stopped onMouseEnter and rerun onMouseLeave when true <br/>
 ***onPause*** - callback function to be called when autoplay stopped <br/>
-***onRestart*** - callback function to be called when autoplay rerun <br/>
+***onRestart*** - callback function to be called when autoplay run <br/>
 ***startItem*** - glider item with which autoplay will start <br/>
+
+---
+### Methods
+pause()
+```js
+const gliderInstance = new Glider(/* see glider-js docs*/);
+gliderAutoplay(gliderInstance, {interval: 3000});
+gliderInstance.pause();
+```
+run()
+```js
+const gliderInstance = new Glider(/* see glider-js docs*/);
+gliderAutoplay(gliderInstance, {interval: 3000});
+gliderInstance.run();
+```
+---
+### Properties
+isRunning //boolean
+```js
+const gliderInstance = new Glider(/* see glider-js docs*/);
+gliderAutoplay(gliderInstance, {interval: 3000});
+console.log(gliderInstance.isRunning) // true
+
+gliderInstance.pause();
+console.log(gliderInstance.isRunning) // false
+
+gliderInstance.run();
+console.log(gliderInstance.isRunning) // true
+```
