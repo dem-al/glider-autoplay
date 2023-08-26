@@ -1,7 +1,4 @@
 function gliderAutoplay(glider, options) {
-    glider.autoplay = autoplay;
-    glider.autoplay(options);
-
     function autoplay(options) {
         const {
             interval,
@@ -22,7 +19,10 @@ function gliderAutoplay(glider, options) {
             _.scrollItem(_.currentItem);
         };
 
-        _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
+        _.autoplayInterval = window.setInterval(
+            incrementSlide.bind(_),
+            interval
+        );
         _.isRunning = true;
 
         const stopAutoplay = () => {
@@ -37,7 +37,7 @@ function gliderAutoplay(glider, options) {
                 return;
             }
             _.currentItem = _.slide;
-            _.autoplayInterval = setInterval(incrementSlide.bind(_), interval);
+            _.autoplayInterval = window.setInterval(incrementSlide, interval);
             _.isRunning = true;
             if (onRestart && typeof onRestart === "function") {
                 onRestart();
@@ -45,16 +45,23 @@ function gliderAutoplay(glider, options) {
         };
 
         if (pausable) {
-            _.ele.onmouseover = stopAutoplay.bind(_);
-            _.ele.ontouchstart = stopAutoplay.bind(_);
-            _.ele.onmouseout = restartAutoplay.bind(_);
-            _.ele.ontouchend = restartAutoplay.bind(_);
-            _.ele.ontouchcancel = restartAutoplay.bind(_);
+            _.ele.addEventListener("mouseover", stopAutoplay.bind(_));
+            _.ele.addEventListener("touchstart", stopAutoplay.bind(_));
+            _.ele.addEventListener("mouseout", restartAutoplay.bind(_));
+            _.ele.addEventListener("touchend", restartAutoplay.bind(_));
+            _.ele.addEventListener("touchcancel", restartAutoplay.bind(_));
         }
 
         _.pause = stopAutoplay;
         _.run = restartAutoplay;
     }
+
+    glider.autoplay = autoplay;
+    glider.autoplay(options);
+}
+
+if (window) {
+    window.gliderAutoplay = gliderAutoplay;
 }
 
 module.exports.gliderAutoplay = gliderAutoplay;

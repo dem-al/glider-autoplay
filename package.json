@@ -1,8 +1,9 @@
 {
     "name": "glider-autoplay",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Autoplay utility for Glider.js",
     "main": "index.js",
+    "types": "index.d.ts",
     "devDependencies": {
         "@babel/core": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
@@ -20,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/alexanderdemidenko/glider-autoplay.git"
+        "url": "git+https://github.com/dem-al/glider-autoplay.git"
     },
     "keywords": [
         "autoplay",
@@ -29,9 +30,9 @@
     "author": "Alexander Demidenko",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/alexanderdemidenko/glider-autoplay/issues"
+        "url": "https://github.com/dem-al/glider-autoplay/issues"
     },
-    "homepage": "https://github.com/alexanderdemidenko/glider-autoplay#readme",
+    "homepage": "https://github.com/dem-al/glider-autoplay#readme",
     "browserslist": "> 0.25%, not dead",
     "babel": {
         "presets": [
