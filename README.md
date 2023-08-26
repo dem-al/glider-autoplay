@@ -2,7 +2,7 @@
 
 ---
 
-##### English [Русский](#русский)
+##### English [Русский](#утилита-автовоспроизведения-для-gliderjs)
 
 ## Autoplay utility for <a href="https://github.com/NickPiscitelli/Glider.js">Glider.js</a>
 
